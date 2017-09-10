@@ -1,0 +1,34 @@
+1、搭建开发环境
+	1 导入开发包
+		mysql驱动
+		c3p0连接池
+		dbutils开发包
+		beanutils开发包
+		jstl开发包
+		log4j开发包
+	2 创建程序包
+		domain
+		dao
+		dao.impl
+		service
+		service.impl
+		web.manager
+		web.client
+		utils
+		webContent/manager 保存后台管理的相关的jsp
+		webContent/client 保存前天相关的jsp
+		webContext/image 保存网站图片
+		
+		前台分帧 index.jsp
+			head.jsp
+			body.jsp
+		后台分帧 manager.jsp
+			head.jsp
+			left.jsp
+			body.jsp
+	3 创建数据库
+		create database bookstore；
+	4 网站的一些常用工具类
+		CharacterEncodingFilter
+		HtmlFilter
+		JdbcUtils
