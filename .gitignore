@@ -2,3 +2,4 @@
 /out/
 /WebContent/images/
 /WebContent/WEB-INF/lib/
+*.DS_Store

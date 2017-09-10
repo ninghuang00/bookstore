@@ -1,6 +1,8 @@
 package cn.hn.domain;
 
-public class User {
+import org.apache.struts.action.ActionForm;
+
+public class User extends ActionForm{
 	private String id;
 	private String username;
 	private String password;;

@@ -9,7 +9,8 @@
 <body>
 <br>
 <br>
-	<form action="${pageContext.request.contextPath }/client/RegisterServlet" method="post" align="center">
+	<%--<form action="${pageContext.request.contextPath }/client/RegisterServlet" method="post" align="center">--%>
+<form action="${pageContext.request.contextPath}/Register.do" method="post" align="center">
 		username:<input type="text" name="username"><br>
 		password:<input type="password" name="password"><br>
 		phonenum:<input type="text" name="phonenumber"><br>
