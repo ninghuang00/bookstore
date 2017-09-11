@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,13 +30,12 @@
 				password:<input type="password" name="password" style="width: 60px">
 				<input type="submit" value="sign in"> <input type="button"
 					value="sign up"
-					onclick="javascript:window.parent.body.location.href='${pageContext.request.contextPath}/RegisterUI.do'">
+					onclick="javascript:window.parent.body.location.href='${pageContext.request.contextPath}/client/register.jsp'">
 			</form>
 		</c:if>
 		
 		<c:if test="${user!=null }">
-			welcome:${user.username } <html:link action="/Logout.do">log out</html:link>
-			<%--<a href="${pageContext.request.contextPath }/client/LogoutServlet">log out</a>--%>
+			welcome:${user.username }<a href="${pageContext.request.contextPath }/client/LogoutServlet">log out</a>
 		</c:if>
 
 	</div>

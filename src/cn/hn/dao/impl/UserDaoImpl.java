@@ -22,7 +22,7 @@ public class UserDaoImpl implements UserDao {
 		try {
 			QueryRunner runner = new QueryRunner(JdbcUtils.getDataSource());
 			String sql = "insert into user values(?,?,?,?,?,?)";
-			Object[] params = {user.getId(),user.getUsername(),user.getPhonenumber(),user.getPassword(),user.getAddress(),user.getEmail()};
+			Object[] params = {user.getId(),user.getUsername(),user.getPassword(),user.getPhonenumber(),user.getAddress(),user.getEmail()};
 			runner.update(sql,params);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

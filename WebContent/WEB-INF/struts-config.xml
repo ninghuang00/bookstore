@@ -5,13 +5,23 @@
           "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 <struts-config>
     <form-beans>
-        <form-bean name="User" type="cn.hn.domain.User"></form-bean>
+        <form-bean name="user" type="cn.hn.domain.User"></form-bean>
     </form-beans>
   <action-mappings>
-    <action path="/Register" type="cn.hn.web.action.RegisterAction" name="User">
+    <action path="/Register"
+            type="cn.hn.web.action.RegisterAction"
+            name="user"
+            validate="true"
+            input="/WEB-INF/client/register.jsp"
+    >
         <forward name="message" path="/message.jsp"></forward>
     </action>
+
+      <action path="/RegisterUI" forward="/WEB-INF/client/register.jsp"></action>
+      <action path="/Logout" forward="/client/LogoutServlet"></action>
   </action-mappings>
+
+    <message-resources parameter="cn.hn.resource.MessageResource"/>
 
 
 </struts-config>
