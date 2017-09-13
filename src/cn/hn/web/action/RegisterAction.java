@@ -17,15 +17,21 @@ import javax.servlet.http.HttpServletResponse;
 public class RegisterAction extends Action {
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        User user = (User) form;
-        user.setId(WebUtils.makeUUID());
-        try {
-            BusinessServiceImpl service = new BusinessServiceImpl();
-            service.registerUser(user);
-            request.setAttribute("message", "successfully");
-        } catch (Exception e) {
-            e.printStackTrace();
-            request.setAttribute("message", "failed");
+        if (this.isTokenValid(request)) {   //首先判断表单带过来的随机码是不是和域中存的随机码是不是一样
+            //request.getSession().removeAttribute("org.apache.struts.action.TOKEN"); //从session域中移除随机码
+            this.resetToken(request);   //同上
+            User user = (User) form;
+            user.setId(WebUtils.makeUUID());
+            try {
+                BusinessServiceImpl service = new BusinessServiceImpl();
+                service.registerUser(user);
+                request.setAttribute("message", "successfully");
+            } catch (Exception e) {
+                e.printStackTrace();
+                request.setAttribute("message", "failed");
+            }
+        } else {
+            request.setAttribute("message", "请勿重复提交表单");
         }
 
         return mapping.findForward("message");

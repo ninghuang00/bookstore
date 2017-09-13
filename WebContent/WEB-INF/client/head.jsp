@@ -30,7 +30,7 @@
 				password:<input type="password" name="password" style="width: 60px">
 				<input type="submit" value="sign in"> <input type="button"
 					value="sign up"
-					onclick="javascript:window.parent.body.location.href='${pageContext.request.contextPath}/client/register.jsp'">
+					onclick="javascript:window.parent.body.location.href='${pageContext.request.contextPath}/WEB-INF/client/register.jsp'">
 			</form>
 		</c:if>
 		
