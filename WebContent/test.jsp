@@ -13,7 +13,13 @@
 </head>
 <body>
 <html:link action="/CustomerRegisterUI">register</html:link><br>
-<html:link action="/UpFileUI">upload</html:link>
+<html:link action="/UpFileUI">upload</html:link><br>
+<a href="${pageContext.request.contextPath}/DownloadFile.do">download</a>
+
+<html:link action="/BookAction?method=add">add book</html:link><br>
+<html:link action="/BookAction?method=delete">delete book</html:link><br>
+<html:link action="/BookAction?method=update">update book</html:link><br>
+<html:link action="/BookAction?method=find">find book</html:link><br>
 
 </body>
 </html>

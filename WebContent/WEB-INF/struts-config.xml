@@ -50,6 +50,17 @@
 
         </action>
 
+        <action path="/DownloadFile" type="cn.hn.web.action.DownloadFileAction">
+            <forward name="message" path="/message.jsp"/>
+        </action>
+
+        <action path="/BookAction"
+                type="cn.hn.web.action.BookAction"
+                parameter="method"
+        >
+
+        </action>
+
     </action-mappings>
 
     <message-resources parameter="cn.hn.resource.MessageResource"/>
