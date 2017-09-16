@@ -8,15 +8,7 @@ import cn.hn.dao.BookDao;
 import cn.hn.dao.CategoryDao;
 import cn.hn.dao.OrderDao;
 import cn.hn.dao.UserDao;
-import cn.hn.domain.Book;
-import cn.hn.domain.Cart;
-import cn.hn.domain.CartItem;
-import cn.hn.domain.Category;
-import cn.hn.domain.Order;
-import cn.hn.domain.OrderItem;
-import cn.hn.domain.Page;
-import cn.hn.domain.Privilege;
-import cn.hn.domain.User;
+import cn.hn.domain.*;
 import cn.hn.service.BusinessService;
 import cn.hn.utils.DaoFactory;
 import cn.hn.utils.Permission;
@@ -227,5 +219,10 @@ public class BusinessServiceImpl implements BusinessService {
 	public List<Privilege> getPrivileges(String id) {
 		return udao.getPrivileges(id);
 	}
+
+    @Override
+    public boolean isCustomerExist(Customer customer) {
+        return false;
+    }
 
 }

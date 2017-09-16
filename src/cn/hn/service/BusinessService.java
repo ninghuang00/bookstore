@@ -2,13 +2,7 @@ package cn.hn.service;
 
 import java.util.List;
 
-import cn.hn.domain.Book;
-import cn.hn.domain.Cart;
-import cn.hn.domain.Category;
-import cn.hn.domain.Order;
-import cn.hn.domain.Page;
-import cn.hn.domain.Privilege;
-import cn.hn.domain.User;
+import cn.hn.domain.*;
 
 public interface BusinessService {
 
@@ -47,7 +41,7 @@ public interface BusinessService {
 	void removebook(Cart cart, Book book);
 
 	List<Privilege> getPrivileges(String id);
-	
-	
 
+
+	boolean isCustomerExist(Customer customer);
 }

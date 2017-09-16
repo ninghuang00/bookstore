@@ -15,7 +15,7 @@
 <%--
 	如果html:标签发现session域中有org.apache.struts.action.TOKEN为随机数，它会自动隐藏字段
 --%>
-<html:form action="/Register" style="align-items: center">
+<html:form action="/RegisterAction" style="align-items: center">
     <table align="center" border="1" width="50% ">
         <tr>
             <td>username</td>

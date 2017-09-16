@@ -24,3 +24,7 @@ out/
 .idea/
 
 .DS_Store
+
+WEB-INF/download/
+
+WEB-INF/upload/

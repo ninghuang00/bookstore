@@ -7,11 +7,13 @@
     <form-beans>
         <form-bean name="user" type="cn.hn.domain.User"></form-bean>
         <form-bean name="customer" type="cn.hn.web.formbean.CustomerFormbean"></form-bean>
+        <form-bean name="UpFileFormBean" type="cn.hn.web.formbean.UpFileFormBean"></form-bean>
     </form-beans>
     <action-mappings>
-        <action path="/Register"
+        <action path="/RegisterAction"
                 type="cn.hn.web.action.RegisterAction"
                 name="user"
+                scope="request"
                 validate="true"
                 input="/WEB-INF/client/register.jsp"
         >
@@ -19,20 +21,34 @@
         </action>
 
 
-        <action path="/TestAction"
+        <action path="/CustomerRegisterAction"
                 type="cn.hn.web.action.CustomerRegisterAction"
                 name="customer"
+                scope="request"
                 validate="true"
-                input="/test.jsp"
+                input="/WEB-INF/client/customerRegister.jsp"
         >
-
+            <forward name="message" path="/message.jsp"></forward>
         </action>
 
+        <action path="/CustomerRegisterUI" type="cn.hn.web.action.CustomerRegisterUIAction">
+            <forward name="customerRegister" path="/WEB-INF/client/customerRegister.jsp"/>
+        </action>
         <action path="/RegisterUI" type="cn.hn.web.action.RegisterUIAction">
             <forward name="register" path="/WEB-INF/client/register.jsp"></forward>
         </action>
 
         <action path="/Logout" forward="/client/LogoutServlet"></action>
+
+        <action path="/UpFileUI" forward="/WEB-INF/client/upload.jsp"/>
+
+        <action path="/UpFile"
+                type="cn.hn.web.action.UpFileAction"
+                name="UpFileFormBean"
+                scope="request"
+        >
+
+        </action>
 
     </action-mappings>
 
