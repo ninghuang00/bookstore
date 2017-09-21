@@ -63,6 +63,8 @@
 
     </action-mappings>
 
+    <!--<controller processorClass="org.apache.struts.action.RequestProcessor"></controller>-->
+
     <message-resources parameter="cn.hn.resource.MessageResource"/>
 
 
