@@ -6,6 +6,7 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
+import org.apache.struts.upload.FormFile;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,12 +17,14 @@ public class BookFormbean extends ActionForm {
     private String id;
     private String name;
     private String author;
-    private String imageName;
+    private FormFile imageName;
     private String price;
     private String description;
     private String category_id;
     //维护一个book实体
     private Book book = new Book();
+
+
 
     public Book getBook() {
         return book;
@@ -55,11 +58,11 @@ public class BookFormbean extends ActionForm {
         this.author = author;
     }
 
-    public String getImageName() {
+    public FormFile getImageName() {
         return imageName;
     }
 
-    public void setImageName(String imageName) {
+    public void setImageName(FormFile imageName) {
         this.imageName = imageName;
     }
 

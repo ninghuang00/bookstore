@@ -41,7 +41,8 @@
         </tr>
         <tr>
             <td>picture</td>
-            <td><input type="file" name="imageName"></td>
+            <td><input type="file" name="imageName" /></td>
+            <%--<td><html:file property="imageName"/></td>--%>
 
         </tr>
         <tr>
