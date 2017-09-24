@@ -52,7 +52,7 @@ public class WebInitListener implements ServletContextListener,
                 throw new RuntimeException("传入的类型不是String");
             }
         }, Date.class);
-
+        //注册转换性别枚举类型的转换器
         ConvertUtils.register(new Converter() {
             @Override
             public <T> T convert(Class<T> type, Object value) {

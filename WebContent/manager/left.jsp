@@ -9,8 +9,8 @@
 <script type="text/javascript">
 	function test(e){
 		e.style.display = e.style.display == 'block' ? 'none' : 'block';
-	} 
-	
+	}
+
 
 </script>
 </head>

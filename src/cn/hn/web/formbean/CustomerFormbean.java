@@ -108,6 +108,7 @@ public class CustomerFormbean extends ActionForm {
         this.email = email;
     }
 
+    //在formbean中维护一个bean实体,直接在表单校验的时候就可以进行转换
     private Customer cus = new Customer();
 
     public Customer getCus() {
