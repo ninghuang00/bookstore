@@ -19,11 +19,13 @@
 <ul>
     <li><a href="#" onclick="test(children[0])">分类管理
         <div class="dc">
-            <a
+            <html:link action="/CategoryUIAction" target="body">add category</html:link><br>
+            <html:link action="/DispatcherAction?forward=goListCategory" target="body">list categories</html:link><br>
+            <%--<a
                     href="${pageContext.request.contextPath }/manager/addcategory.jsp"
-                    target="body">添加分类</a><br/> <a
-                href="${pageContext.request.contextPath }/manager/CategoryServlet?method=listall"
-                target="body">查看分类</a><br/>
+                    target="body">添加分类</a><br/>
+                <a href="${pageContext.request.contextPath }/manager/CategoryServlet?method=listall"
+                target="body">查看分类</a><br/>--%>
         </div>
     </a></li>
     <br>
@@ -31,7 +33,7 @@
         <div>
             <%--改成struts框架的html标签之后就可以直接指定跳转action的调用方法,而且不用指定访问的Action的路径--%>
             <html:link action="/BookUIAction" target="body">add book</html:link><br>
-            <html:link action="/DispatcherAction?forward=goListBook" target="body">list books</html:link>
+            <html:link action="/DispatcherAction?forward=goListBook" target="body">list books</html:link><br>
             <%--<a
                     href="${pageContext.request.contextPath }/manager/BookServlet?method=addUI"
                     target="body">add book</a> <br/> <a
@@ -44,11 +46,13 @@
     <br>
     <li><a href="#" onclick="test(children[0])">订单管理
         <div>
-            <a
+            <html:link action="/OrderAction?method=listOrder&state=false" target="body">未发货订单</html:link><br>
+            <html:link action="/OrderAction?method=listOrder&state=true" target="body">已经发货订单</html:link><br>
+            <%--<a
                     href="${pageContext.request.contextPath }/manager/ListOrderServlet?state=false"
                     target="body">未发货订单</a><br/> <a
                 href="${pageContext.request.contextPath }/manager/ListOrderServlet?state=true"
-                target="body">已发货订单</a><br/>
+                target="body">已发货订单</a><br/>--%>
         </div>
     </a></li>
 </ul>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,7 +31,8 @@
 				<td>${ order.state==true?'已发货':'未发货'}</td>
 				<td>
 					<a href="#">删除</a>
-					<a href="${pageContext.request.contextPath }/manager/OrderDetailServlet?orderid=${order.id}">查看明细</a>	
+					<%--<a href="${pageContext.request.contextPath }/manager/OrderDetailServlet?orderid=${order.id}">查看明细</a>--%>
+					<html:link action="/OrderAction?method=detailOrder&orderid=${order.id}">查看明细</html:link><br>
 				</td>
 			</tr>
 

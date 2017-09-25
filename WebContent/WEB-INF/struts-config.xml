@@ -6,17 +6,22 @@
 <struts-config>
     <!--???????formbean-->
     <form-beans>
-        <form-bean name="user" type="cn.hn.domain.User"></form-bean>
-        <form-bean name="customer" type="cn.hn.web.formbean.CustomerFormbean"></form-bean>
-        <form-bean name="UpFileFormBean" type="cn.hn.web.formbean.UpFileFormBean"></form-bean>
-        <form-bean name="book" type="cn.hn.web.formbean.BookFormbean"></form-bean>
+        <form-bean name="user" type="cn.hn.domain.User"/>
+        <form-bean name="customer" type="cn.hn.web.formbean.CustomerFormbean"/>
+        <form-bean name="UpFileFormBean" type="cn.hn.web.formbean.UpFileFormBean"/>
+        <form-bean name="book" type="cn.hn.web.formbean.BookFormbean"/>
+        <form-bean name="category" type="cn.hn.web.formbean.CategoryFormbean"/>
     </form-beans>
     <!--??Action?????-->
     <action-mappings>
         <!--?????????action-->
+        <action path="/CategoryUIAction"
+                type="cn.hn.web.action.CategoryUIAction">
+            <forward name="addcategory" path="/WEB-INF/manager/addcategory.jsp"/>
+        </action>
+        <!--?????????action-->
         <action path="/BookUIAction"
-                type="cn.hn.web.action.BookUIAction"
-        >
+                type="cn.hn.web.action.BookUIAction">
             <forward name="addbook" path="/WEB-INF/manager/addBook.jsp"/>
         </action>
         <!--?????Action-->
@@ -25,8 +30,7 @@
                 name="user"
                 scope="request"
                 validate="true"
-                input="/WEB-INF/client/register.jsp"
-        >
+                input="/WEB-INF/client/register.jsp">
             <forward name="message" path="/message.jsp"></forward>
         </action>
         <!--?????action-->
@@ -35,8 +39,7 @@
                 name="customer"
                 scope="request"
                 validate="true"
-                input="/WEB-INF/client/customerRegister.jsp"
-        >
+                input="/WEB-INF/client/customerRegister.jsp">
             <forward name="message" path="/message.jsp"></forward>
         </action>
         <!--?????????-->
@@ -55,8 +58,7 @@
         <action path="/UpFile"
                 type="cn.hn.web.action.UpFileAction"
                 name="UpFileFormBean"
-                scope="request"
-        >
+                scope="request">
 
         </action>
         <!--????Action-->
@@ -70,8 +72,7 @@
                 type="cn.hn.web.action.BookAction"
                 parameter="method"
                 input="/WEB-INF/manager/addBook.jsp"
-                validate="true"
-        >
+                validate="true">
             <forward name="message" path="/message.jsp"/>
 
         </action>
@@ -82,6 +83,25 @@
             <forward name="managerLeft" path="/WEB-INF/manager/left.jsp"/>
             <forward name="managerBody" path="/WEB-INF/manager/body.jsp"/>
             <forward name="listbook" path="/WEB-INF/manager/listbook.jsp" />
+            <forward name="listcategory" path="/WEB-INF/manager/listcategory.jsp"/>
+
+        </action>
+        <!--?????Action-->
+        <action path="/CategoryAction"
+                type="cn.hn.web.action.CategoryAction"
+                name="category"
+                scope="request"
+                input="/WEB-INF/manager/addcategory.jsp"
+        >
+            <forward name="message" path="/message.jsp"/>
+        </action>
+        <!--????Action-->
+        <action path="/OrderAction"
+                type="cn.hn.web.action.OrderAction"
+                scope="request"
+                parameter="method">
+            <forward name="listorder" path="/WEB-INF/manager/listorder.jsp"/>
+            <forward name="detailorder" path="/WEB-INF/manager/orderdetail.jsp"/>
 
         </action>
 

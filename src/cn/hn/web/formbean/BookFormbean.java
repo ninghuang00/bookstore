@@ -5,7 +5,6 @@ import cn.hn.utils.WebUtils;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.action.ActionMessage;
 import org.apache.struts.upload.FormFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -94,19 +93,19 @@ public class BookFormbean extends ActionForm {
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
 
-        if(isEmpty(this.name)){
-            addMessage(errors,"name","the name of book cannot be null");
+        if(WebUtils.isEmpty(this.name)){
+            WebUtils.addMessage(errors,"name","the name of book cannot be null");
         }else{
             book.setName(this.name);
         }
-        if(isEmpty(price)){
-            addMessage(errors,"price","the price of a book cannot be null");
+        if(WebUtils.isEmpty(price)){
+            WebUtils.addMessage(errors,"price","the price of a book cannot be null");
         }else{
             try {
                 double pri = Double.parseDouble(price);
                 book.setPrice(pri);
             }catch (Exception e){
-                addMessage(errors,"price","price should be a number");
+                WebUtils.addMessage(errors,"price","price should be a number");
             }
         }
         book.setAuthor(author);
@@ -119,11 +118,5 @@ public class BookFormbean extends ActionForm {
         return errors;
     }
 
-    private void addMessage(ActionErrors errors, String key, String message) {
-        errors.add(key,new ActionMessage(message,false));
-    }
 
-    public  boolean isEmpty(String value){
-        return (value == null || value.trim().equals(""));
-    }
 }

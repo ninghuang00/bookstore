@@ -9,7 +9,9 @@ import cn.hn.domain.Privilege;
 import cn.hn.domain.User;
 import cn.hn.service.BusinessService;
 
-
+/*
+	权限拦截服务工厂,动态代理技术
+ */
 public class ServiceFactory {
 	private static final ServiceFactory instance = new ServiceFactory();
 
@@ -21,9 +23,16 @@ public class ServiceFactory {
 	}
 
 	@SuppressWarnings("unchecked")
+	/*
+	 * title:动态代理service
+	 * explanation:
+	 * example:
+	 * param:传入类的名字,还有用户(看是否有权限)
+	 * return:
+	 */
 	public <T> T createService(String className, Class<T> clazz, final User user) {
 		try {
-			
+
 			final T t = (T) Class.forName(className).newInstance();
 			return (T) Proxy.newProxyInstance(ServiceFactory.class.getClassLoader(), t.getClass().getInterfaces(),
 					new InvocationHandler() {

@@ -82,7 +82,8 @@ public class CategoryServlet extends HttpServlet {
 	 */
 	private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			BusinessService service = ServiceFactory.getInstance().createService("cn.hn.service.impl.BusinessServiceImpl", BusinessService.class, (User)request.getSession().getAttribute("user"));
+			BusinessService service = ServiceFactory.getInstance().createService("cn.hn.service.impl.BusinessServiceImpl",
+					BusinessService.class, (User)request.getSession().getAttribute("user"));
 			Category cate = new Category();
 			String description = request.getParameter("description");
 			String name = request.getParameter("name");
